@@ -48,11 +48,22 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('Sign Up') }}     <i class="fas fa-user-plus fa-1x"></i></a>
                                 </li>
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    Category <span class="caret"></span>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right" style="margin-right:100px;" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="category/bil">Bil</a>
+
+                                    <div class="dropdown-menu2 dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="category/båt">Båt</a>
+
+                                    <div class="dropdown-menu3 dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="category/konsoler">Konsoler</a>
                             @endif
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                    {{ Auth::user()->name }} <span class="caret" style="margin-left:5px;"></span>
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
