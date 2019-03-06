@@ -1,11 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>RMG</title>
-</head>
-<body>
+@extends('layouts/app')
 
-<h1>Welcome</h1>
-
-</body>
-</html>
+@section('content')
+	<div class="container mt-3">
+		<h1>Welcome</h1>
+	</div><!-- /.container -->
+@endsection
