@@ -18,6 +18,15 @@ Route::get('/', function () {
 Route::get('category', function () {
     return view('category');
 });
+Route::get('/category/bil', function () {
+    return view('category/bil');
+});
+Route::get('/category/båt', function () {
+    return view('category/båt');
+});
+Route::get('/category/konsoler', function () {
+    return view('category/konsoler');
+});
 
 Auth::routes();
 
