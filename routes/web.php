@@ -21,6 +21,15 @@ Route::get('/', function () {
 Route::get('/bookings/thankyou', function () {
 	return view('bookings/thankyou');
 });
+Route::get('/category/bil', function () {
+    return view('category/bil');
+});
+Route::get('/category/båt', function () {
+    return view('category/båt');
+});
+Route::get('/category/konsoler', function () {
+    return view('category/konsoler');
+});
 
 Route::resource('/bookings', 'BookingController');
 

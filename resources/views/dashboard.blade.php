@@ -15,8 +15,11 @@
 					<a href="articles/myarticles">My Articles</a>
 					<br>
 				
-				
-				@if ($bookings = \App\Booking::where('article_id', auth()->id())->get())
+				@php
+use App\Booking;
+@endphp
+				@if ($bookings = Booking::where('article_id', auth()->id())->get())
+>
 					<p>Bokningsförfrågningar:</p>
 					
 		<ol>
@@ -33,4 +36,7 @@
 				</div>
 			</div>
 		</div>
+
+	</div>
+
 	</div>
