@@ -32,7 +32,6 @@
 		</form>
 
 		<a href="/articles">&laquo; Back to all projects</a>
-
 			<div class="form-group">
 				<label for="rent_price">Pris</label>
 				<input type="text" name="rent_price" id="rent_price" class="form-control" placeholder="Exempel: 300">

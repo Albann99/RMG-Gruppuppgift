@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Auth;
 use App\Article;
 use App\Category;
-use App\Category;
 use Illuminate\Http\Request;
 
 class ArticleController extends Controller
@@ -15,6 +14,10 @@ class ArticleController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function index()
+    {
+
 
     public function __construct()
     {
@@ -44,9 +47,6 @@ class ArticleController extends Controller
         
      return view('articles/create');
 
-        
-     return view('articles/create');
-
     }
 
     /**
@@ -61,8 +61,6 @@ class ArticleController extends Controller
         $article->user_id = Auth::user()->id;
         $article->name = $request->name;
         $article->url = $request->url;
-        $article->rent_price = $request->rent_price;
-        $article->category_id = $request->category_id;
         $article->rent_price = $request->rent_price;
         $article->category_id = $request->category_id;
         $article->save();
@@ -91,8 +89,6 @@ class ArticleController extends Controller
     public function edit(Article $article)
     {
 
-        
-        return view('articles/edit', ['article' => $article]);
         
         return view('articles/edit', ['article' => $article]);
     }

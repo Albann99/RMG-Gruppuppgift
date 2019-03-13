@@ -52,15 +52,14 @@ Route::resource('/categories', 'CategoryController');
 Route::resource('/categories', 'CategoryController');
 >>>>>>> 41b1e86937dcbadbd556f2cf1e62944b2fe2de35
 
+Route::resource('/categories', 'CategoryController');
+
+
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('/articles', 'ArticleController');
 Route::post('/bookings', 'BookingController@store');
-Route::get('/dashboard', 'DashboardController@index');
 
-Route::middleware(['auth'])->group(function() { 
 Route::get('/dashboard', 'DashboardController@index');
-});
-
 
 Route::middleware(['auth'])->group(function() { 
 Route::get('/dashboard', 'DashboardController@index');

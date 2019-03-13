@@ -21,9 +21,6 @@ class CreateArticleTable extends Migration
             $table->string('rent_price');
             $table->bigInteger('category_id')->unsigned();
             $table->bigInteger('user_id')->unsigned();
-            $table->string('rent_price');
-            $table->bigInteger('category_id')->unsigned();
-            $table->bigInteger('user_id')->unsigned();
             $table->timestamps();
         });
     }
