@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
 use App\Booking;
 use Illuminate\Http\Request;
 
@@ -14,9 +15,7 @@ class BookingController extends Controller
      */
     public function index()
     {
-        $bookings = Booking::all();
-
-        return view('/bookings', ['bookings' => $bookings]);
+       
     }
 
     /**
@@ -37,6 +36,7 @@ class BookingController extends Controller
      */
     public function store(Request $request)
     {
+        //dd($request->all());
 
         $booking = new Booking(); 
         $booking->article_id = $request->article_id;
@@ -59,7 +59,13 @@ class BookingController extends Controller
      */
     public function show(Booking $booking)
     {
-        //
+        if ($booking->article_id == Auth::user()->id);
+        
+        else 
+            abort(403);
+
+
+        return view('bookings/show', ['booking' => $booking]);
 
     }
 

@@ -23,12 +23,12 @@
 				<input type="text" name="rent_price" id="rent_price" class="form-control" placeholder="Exempel: 300">
 			</div>
 
-	
-			
-			<div class="form-group">
-				<label for="category_id">Category id</label>
-				<input type="text" name="category_id" id="category_id" class="form-control" placeholder="Exempel: 1">
-			</div>
+			<label for="category_id">Category</label>
+			<select class="form-control" id="category_id" name="category_id">
+				@foreach ($categories as $category)
+				<option value="{{ $category->id }}">{{ $category->name }}</option>
+				@endforeach
+			</select>
 
 
 			<div class="form-group">

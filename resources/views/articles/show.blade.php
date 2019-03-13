@@ -80,9 +80,9 @@ use Carbon\Carbon;
 @if ($article->user_id == Auth::user()->id)
 
 <div>
-<a href="/articles/{{ $article->id }}/edit" class="btn btn-warning" style="width:100%">Edit Project</a>
+<a href="/articles/{{ $article->slug }}/edit" class="btn btn-warning" style="width:100%">Edit Project</a>
 
-<form method="post" action="/articles/{{ $article->id }}">
+<form method="post" action="/articles/{{ $article->slug }}">
         @csrf
         @method('DELETE')
 

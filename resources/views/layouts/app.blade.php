@@ -45,6 +45,8 @@
                     <ul class="navbar-nav ml-auto">
                         @auth 
                         <li class="nav-item">
+                            <a class="nav-link" href="/articles/create">Create new Article</a></li>
+                        <li class="nav-item">
                             <a class="nav-link" href="/dashboard">Dashboard</a>
                         </li>
                         @endauth

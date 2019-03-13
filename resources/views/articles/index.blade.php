@@ -12,7 +12,7 @@ use App\Article;
    <h1>My articles</h1>
 <ol>
 		@foreach($articles as $article)
-		<li><a href="/articles/{{$article->id }}">{{$article->name }}</a></li>
+		<li><a href="/articles/{{$article->slug }}">{{$article->name }}</a></li>
 		@endforeach
 	</ol>
 @endif
@@ -25,7 +25,7 @@ $articles = Article::all();
 
 	<ol>
 		@foreach($articles as $article)
-		<li><a href="/articles/{{ $article->id }}">{{ $article->name }}</a></li>
+		<li><a href="/articles/{{ $article->slug }}">{{ $article->name }}</a></li>
 		@endforeach
 	</ol>
 	@endsection

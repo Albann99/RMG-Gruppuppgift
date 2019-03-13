@@ -3,10 +3,8 @@
 namespace App\Http\Controllers;
 
 use Auth;
-use App\Article;
-
-
 use App\Category;
+use App\Article;
 use Illuminate\Http\Request;
 
 class ArticleController extends Controller
@@ -16,7 +14,6 @@ class ArticleController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-
 
     public function __construct()
     {
@@ -28,9 +25,11 @@ class ArticleController extends Controller
     public function index()
     {
         $articles = Article::all();
-
+        
         return view('articles/index', ['articles' => $articles]);
+        
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -39,9 +38,9 @@ class ArticleController extends Controller
      */
     public function create()
     {
+        $categories = Category::orderBy('name')->get();
 
-     return view('articles/create');   
-
+     return view('articles/create', ['categories' => $categories]);
     }
 
     /**
@@ -56,8 +55,8 @@ class ArticleController extends Controller
         $article->user_id = Auth::user()->id;
         $article->name = $request->name;
         $article->url = $request->url;
-
         $article->rent_price = $request->rent_price;
+        $article->slug = str_slug($request->slug);
         $article->category_id = $request->category_id;
         $article->save();
 
@@ -73,6 +72,7 @@ class ArticleController extends Controller
      */
     public function show(Article $article)
     {
+
         return view('articles/show', ['article' => $article]);
     }
 
@@ -84,15 +84,12 @@ class ArticleController extends Controller
      */
     public function edit(Article $article)
     {
-        //
-
-
-
-        //
-
-
+        if ($article->user_id == Auth::user()->id);
+            else 
+            abort(403);
+        
+        
         return view('articles/edit', ['article' => $article]);
-
     }
 
     /**
@@ -104,15 +101,13 @@ class ArticleController extends Controller
      */
     public function update(Request $request, Article $article)
     {
-        //
-
-
         $article->name = $request->name;
         $article->url = $request->url;
         $article->rent_price = $request->rent_price;
+        $article->slug = str_slug($request->name);
         $article->save();
 
-        return redirect('/articles/' . $article->id);
+        return redirect('/articles/' . $article->slug);
     }
 
     /**
@@ -123,9 +118,6 @@ class ArticleController extends Controller
      */
     public function destroy(Article $article)
     {
-        //
-
-
         $article->delete();
 
        return redirect('/articles');

@@ -6,7 +6,7 @@
 
 		<ol>
 			@foreach ($categories as $category)
-			<li><a href="/categories/{{ $category->id }}">{{ $category->name}}</a></li>
+			<li><a href="/categories/{{$category->slug }}">{{ $category->name}}</a></li>
 			@endforeach
 		</ol>
 		@endsection

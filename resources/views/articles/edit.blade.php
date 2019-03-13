@@ -2,10 +2,10 @@
 
 @section('content')
 	<div class="container mt-3">
-		@if ($article->user_id == Auth::user()->id)
+		
 		<h1>Edit Article: {{ $article->name }}</h1>
 
-		<form method="POST" action="/articles/{{ $article->id }}">
+		<form method="POST" action="{{route('articles.update', $article) }}">
 
 			@csrf
 			@method('PATCH')
@@ -31,8 +31,5 @@
 		<a href="/articles">&laquo; Back to all articles</a><br>
 
 	</div>
-	@else <p>You do not have permission to edit this article</p>
 	
-
-	@endif
 @endsection

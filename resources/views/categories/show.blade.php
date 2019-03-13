@@ -8,7 +8,7 @@
 		<h5>All Articles in {{ $category->name }} category</h5> 
 		<ol>
 			@foreach($articles as $article)
-			<li><a href="/articles/{{ $article->id }}"> {{ $article->name }}</li>
+			<li><a href="/articles/{{$article->slug }}"> {{ $article->name }}</li>
 			@endforeach
 		</ol>
 		@endsection
