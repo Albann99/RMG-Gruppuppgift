@@ -20,7 +20,6 @@ class CreateBookingsTable extends Migration
             $table->string('lastname');
             $table->string('email');
             $table->string('phone');
-            $table->date('date');
             $table->datetime('date_start');
             $table->datetime('date_end');
             $table->timestamps();
