@@ -58,6 +58,7 @@ class ArticleController extends Controller
         $article->rent_price = $request->rent_price;
         $article->slug = str_slug($request->slug);
         $article->category_id = $request->category_id;
+        $article->ort = $request->ort;
         $article->save();
 
         return redirect('/articles');

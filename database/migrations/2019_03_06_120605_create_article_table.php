@@ -19,6 +19,7 @@ class CreateArticleTable extends Migration
             $table->string('slug')->unique();
             $table->string('url');
             $table->string('rent_price');
+            $table->string('ort');
             $table->bigInteger('category_id')->unsigned();
             $table->bigInteger('user_id')->unsigned();
             $table->timestamps();

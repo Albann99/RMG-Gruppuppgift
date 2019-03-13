@@ -15,6 +15,7 @@ use Carbon\Carbon;
       <h1 class="card-title" style="text-transform: uppercase;"><strong> {{ $article->name }}</strong></h1>
       <h1 class="card-title" style="text-transform: uppercase;"><strong>PRIS: {{ $article->rent_price }} KR</strong></h1>
       <p>Created: <strong>{{ $article->created_at->diffForHumans() }}</strong></p>
+      <h3>Ort: <strong>{{ $article->ort }}</strong></h3>
       <form>
         
       <div class="form-row">

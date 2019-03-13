@@ -4,11 +4,8 @@
 <div class="container mt-3">
 
 
-	@php
-use App\Article;
-@endphp
    @if(Auth::check())
-@if ($articles = Article::where('user_id', auth()->id())->get())
+@if ($articles = App\Article::where('user_id', auth()->id())->get())
    <h1>My articles</h1>
 <ol>
 		@foreach($articles as $article)
@@ -19,7 +16,7 @@ use App\Article;
 @endif
 
 	@php
-$articles = Article::all();
+$articles = App\Article::all();
 @endphp
 	<h1>All articles</h1>
 
