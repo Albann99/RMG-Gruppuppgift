@@ -19,6 +19,13 @@ Route::get('category', function () {
     return view('category');
 });
 
+Route::get('/category/bil', function () {
+	return view('category/bil');
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::resource('/articles', 'ArticleController');
+Route::post('/bookings', 'BookingController@store');
+Route::get('/dashboard', 'DashboardController@index');
