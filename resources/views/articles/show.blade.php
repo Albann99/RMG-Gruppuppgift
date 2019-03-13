@@ -7,6 +7,10 @@
 
 	@method('POST')
 @php 
+
+	@method('POST')
+@php
+
 use Carbon\Carbon;
 @endphp
 
@@ -21,7 +25,7 @@ use Carbon\Carbon;
       <p>Created: <strong>{{ $article->created_at->diffForHumans() }}</strong></p>
 
       <form>
-      	
+
       <div class="form-row">
       <div>
       <input type="hidden" class="form-control" id="article_id" value="{{ $article->id }}">
@@ -102,7 +106,7 @@ use Carbon\Carbon;
         <option>{{ Carbon::now()->addDay(7) }}</option>
       </select>
     </div>
-   
+
 
   <div class="form-group">
     </div>
@@ -110,10 +114,16 @@ use Carbon\Carbon;
   <input type="submit" value="HYRA" class="btn btn-primary">
 </form>
 
+
     </div>
   </div>
 </form>
- 
+
+    </div>
+  </div>
+</form>
+
+
 </form>
     </div>
   </div>
@@ -136,5 +146,8 @@ use Carbon\Carbon;
 </div>
 @endif
 @endif
+
+
+@endsection
 
 @endsection

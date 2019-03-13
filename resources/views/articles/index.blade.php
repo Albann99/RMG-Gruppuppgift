@@ -26,7 +26,14 @@ $articles = Article::all();
 		@foreach($articles as $article)
 		<li><a href="/articles/{{ $article->id }}">{{ $article->name }}</a></li>
 
+
 		<li><a href="/articles/{{$article->id }}">{{$article->name }}</a></li>
 		@endforeach
 	</ol>
 	@endsection
+
+		<li><a href="/articles/{{$article->id }}">{{$article->name }}</a></li>
+		@endforeach
+	</ol>
+	@endsection
+
