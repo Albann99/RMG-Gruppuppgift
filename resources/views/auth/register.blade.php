@@ -40,6 +40,30 @@
                         </div>
 
                         <div class="form-group row">
+                            <label for="phone" class="col-md-4 col-form-label text-md-right">{{ __('Telefonnummer') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="phone" type="phone" class="form-control{{ $errors->has('phone') ? ' is-invalid' : '' }}" name="phone" value="{{ old('Telefonnummer') }}" required>
+                            </div>
+                        </div>
+
+                          <div class="form-group row">
+                            <label for="adress" class="col-md-4 col-form-label text-md-right">{{ __('Adress') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="adress" type="adress" class="form-control{{ $errors->has('adress') ? ' is-invalid' : '' }}" name="adress" value="{{ old('Adress') }}" required>
+                            </div>
+                        </div>
+
+                         <div class="form-group row">
+                            <label for="ort" class="col-md-4 col-form-label text-md-right">{{ __('Ort') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="ort" type="ort" class="form-control{{ $errors->has('ort') ? ' is-invalid' : '' }}" name="ort" value="{{ old('Ort') }}" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
 
                             <div class="col-md-6">
