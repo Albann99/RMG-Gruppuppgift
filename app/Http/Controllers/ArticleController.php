@@ -17,17 +17,6 @@ class ArticleController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function index()
-    {
-
-
-    public function index()
-    {
-
-    public function index()
-    {
-
-
 
     public function __construct()
     {
@@ -38,8 +27,6 @@ class ArticleController extends Controller
 
     public function index()
     {
-
-
         $articles = Article::all();
 
         return view('articles/index', ['articles' => $articles]);
@@ -54,19 +41,6 @@ class ArticleController extends Controller
     {
 
      return view('articles/create');   
-
-
-     return view('articles/create');   
-
-
-     return view('articles/create');   
-
-        
-
-     return view('articles/create');
-
-
-     return view('articles/create');
 
     }
 
