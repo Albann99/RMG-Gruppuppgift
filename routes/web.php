@@ -39,24 +39,29 @@ Route::get('/articles/myarticles', function () {
 });
 });
 
-<<<<<<< HEAD
 Route::get('/category/bil', function () {
 	return view('category/bil');
 });
 
 Auth::routes();
-=======
+Route::resource('/categories', 'CategoryController');
+
+
+});
+
 Route::resource('/categories', 'CategoryController');
 >>>>>>> 41b1e86937dcbadbd556f2cf1e62944b2fe2de35
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('/articles', 'ArticleController');
 Route::post('/bookings', 'BookingController@store');
-<<<<<<< HEAD
 Route::get('/dashboard', 'DashboardController@index');
-=======
 
 Route::middleware(['auth'])->group(function() { 
 Route::get('/dashboard', 'DashboardController@index');
 });
->>>>>>> 41b1e86937dcbadbd556f2cf1e62944b2fe2de35
+
+
+Route::middleware(['auth'])->group(function() { 
+Route::get('/dashboard', 'DashboardController@index');
+});

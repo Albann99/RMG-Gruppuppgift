@@ -2,8 +2,6 @@
 
 @section('content')
 <div class="container mt-3">
-<<<<<<< HEAD
-=======
 
 	@php
 use App\Article;
@@ -22,16 +20,14 @@ use App\Article;
 	@php
 $articles = Article::all();
 @endphp
->>>>>>> 41b1e86937dcbadbd556f2cf1e62944b2fe2de35
 	<h1>All articles</h1>
 
 	<ol>
 		@foreach($articles as $article)
-<<<<<<< HEAD
 		<li><a href="/articles/{{ $article->id }}">{{ $article->name }}</a></li>
-=======
 		<li><a href="/articles/{{$article->id }}">{{$article->name }}</a></li>
->>>>>>> 41b1e86937dcbadbd556f2cf1e62944b2fe2de35
+
+		<li><a href="/articles/{{$article->id }}">{{$article->name }}</a></li>
 		@endforeach
 	</ol>
 	@endsection

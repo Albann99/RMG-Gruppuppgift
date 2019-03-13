@@ -4,28 +4,26 @@
 @section('content')
 <form method="POST" action="/bookings">
 	@csrf
-<<<<<<< HEAD
-=======
 	@method('POST')
 @php 
 use Carbon\Carbon;
 @endphp
->>>>>>> 41b1e86937dcbadbd556f2cf1e62944b2fe2de35
+
 <div class="card-group" style="max-width: 50%;">
   <div class="card" style="margin:20px; border:1px solid black;">
     <img src="{{ $article->url }}" class="card-img-top">
     <div class="card-body">
       <h1 class="card-title" style="text-transform: uppercase;"><strong> {{ $article->name }}</strong></h1>
-<<<<<<< HEAD
-=======
+
       <h1 class="card-title" style="text-transform: uppercase;"><strong>PRIS: {{ $article->rent_price }} KR</strong></h1>
       <p>Created: <strong>{{ $article->created_at->diffForHumans() }}</strong></p>
->>>>>>> 41b1e86937dcbadbd556f2cf1e62944b2fe2de35
+
+      <h1 class="card-title" style="text-transform: uppercase;"><strong>PRIS: {{ $article->rent_price }} KR</strong></h1>
+      <p>Created: <strong>{{ $article->created_at->diffForHumans() }}</strong></p>
       <form>
       	
       <div class="form-row">
       <div>
-<<<<<<< HEAD
       <input type="hidden" class="form-control" id="article_id" value="{{ $article->id }}">
     </div>
     <div class="form-group col-md-6">
@@ -35,7 +33,6 @@ use Carbon\Carbon;
     <div class="form-group col-md-6">
       <label for="lastname">Last Name</label>
       <input type="text" class="form-control" id="lastname" name="lastname" value="lastname" placeholder="LastName">
-=======
       <input type="hidden" class="form-control" id="article_id" name="article_id" value="{{ $article->id }}">
     </div>
     <div class="form-group col-md-6">
@@ -45,12 +42,12 @@ use Carbon\Carbon;
     <div class="form-group col-md-6">
       <label for="lastname">Last Name</label>
       <input type="text" class="form-control" id="lastname" name="lastname" placeholder="LastName" required>
->>>>>>> 41b1e86937dcbadbd556f2cf1e62944b2fe2de35
+
     </div>
   </div>
   <div class="form-group">
     <label for="email">Email</label>
-<<<<<<< HEAD
+
     <input type="email" class="form-control" id="email" value="email" name="email" placeholder="....@live.se">
   </div>
 
@@ -65,7 +62,7 @@ use Carbon\Carbon;
     <label for="date"></label>
     <input type="date" class="form-control" id="date" value="date" name="date"placeholder="....@live.se">
   </div>
-=======
+
     <input type="email" class="form-control" id="email" name="email" placeholder="....@live.se" required>
   </div>
 
@@ -103,14 +100,13 @@ use Carbon\Carbon;
       </select>
     </div>
    
->>>>>>> 41b1e86937dcbadbd556f2cf1e62944b2fe2de35
 
   <div class="form-group">
     </div>
   </div>
   <input type="submit" value="HYRA" class="btn btn-primary">
 </form>
-<<<<<<< HEAD
+
     </div>
   </div>
 </form>
@@ -120,7 +116,6 @@ use Carbon\Carbon;
   </div>
 </div>
 
-=======
 <br>
 @if (Auth::check())
 @if ($article->user_id == Auth::user()->id)
@@ -137,5 +132,4 @@ use Carbon\Carbon;
 </div>
 @endif
 @endif
->>>>>>> 41b1e86937dcbadbd556f2cf1e62944b2fe2de35
 @endsection
