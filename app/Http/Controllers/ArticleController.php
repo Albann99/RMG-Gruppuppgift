@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Auth;
 use App\Article;
+
+
 use App\Category;
 use Illuminate\Http\Request;
 
@@ -19,6 +21,14 @@ class ArticleController extends Controller
     {
 
 
+    public function index()
+    {
+
+    public function index()
+    {
+
+
+
     public function __construct()
     {
         $this->middleware('auth', ['except' => ['index', 'show']]);
@@ -28,6 +38,7 @@ class ArticleController extends Controller
 
     public function index()
     {
+
 
         $articles = Article::all();
 
@@ -41,6 +52,16 @@ class ArticleController extends Controller
      */
     public function create()
     {
+
+     return view('articles/create');   
+
+
+     return view('articles/create');   
+
+
+     return view('articles/create');   
+
+        
 
      return view('articles/create');
 
@@ -61,6 +82,7 @@ class ArticleController extends Controller
         $article->user_id = Auth::user()->id;
         $article->name = $request->name;
         $article->url = $request->url;
+
         $article->rent_price = $request->rent_price;
         $article->category_id = $request->category_id;
         $article->save();
@@ -88,9 +110,15 @@ class ArticleController extends Controller
      */
     public function edit(Article $article)
     {
+        //
+
+
+
+        //
 
 
         return view('articles/edit', ['article' => $article]);
+
     }
 
     /**
@@ -102,6 +130,9 @@ class ArticleController extends Controller
      */
     public function update(Request $request, Article $article)
     {
+        //
+
+
         $article->name = $request->name;
         $article->url = $request->url;
         $article->rent_price = $request->rent_price;
@@ -118,6 +149,9 @@ class ArticleController extends Controller
      */
     public function destroy(Article $article)
     {
+        //
+
+
         $article->delete();
 
        return redirect('/articles');

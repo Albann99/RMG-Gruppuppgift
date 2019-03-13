@@ -33,10 +33,18 @@ Route::get('/category/konsoler', function () {
 
 Route::resource('/bookings', 'BookingController');
 
+
+Route::middleware(['auth'])->group(function() { 
+
 Route::middleware(['auth'])->group(function() {
+
 Route::get('/articles/myarticles', function () {
 	return view('/articles/myarticles');
 });
+});
+
+Route::get('/category/bil', function () {
+	return view('category/bil');
 });
 
 Route::get('/category/bil', function () {
@@ -64,6 +72,17 @@ Route::post('/bookings', 'BookingController@store');
 
 Route::get('/dashboard', 'DashboardController@index');
 
+Route::get('/dashboard', 'DashboardController@index');
+
+
+Route::get('/dashboard', 'DashboardController@index');
+
+Route::middleware(['auth'])->group(function() { 
+Route::get('/dashboard', 'DashboardController@index');
+});
+
+
 Route::middleware(['auth'])->group(function() {
 Route::get('/dashboard', 'DashboardController@index');
 });
+

@@ -4,8 +4,14 @@
 @section('content')
 <form method="POST" action="/bookings">
 	@csrf
+
+
+	@method('POST')
+@php 
+
 	@method('POST')
 @php
+
 use Carbon\Carbon;
 @endphp
 
@@ -14,6 +20,9 @@ use Carbon\Carbon;
     <img src="{{ $article->url }}" class="card-img-top">
     <div class="card-body">
       <h1 class="card-title" style="text-transform: uppercase;"><strong> {{ $article->name }}</strong></h1>
+      <form>
+      	
+
 
       <h1 class="card-title" style="text-transform: uppercase;"><strong>PRIS: {{ $article->rent_price }} KR</strong></h1>
       <p>Created: <strong>{{ $article->created_at->diffForHumans() }}</strong></p>
@@ -31,6 +40,7 @@ use Carbon\Carbon;
     <div class="form-group col-md-6">
       <label for="lastname">Last Name</label>
       <input type="text" class="form-control" id="lastname" name="lastname" value="lastname" placeholder="LastName">
+
       <input type="hidden" class="form-control" id="article_id" name="article_id" value="{{ $article->id }}">
     </div>
     <div class="form-group col-md-6">
@@ -45,6 +55,7 @@ use Carbon\Carbon;
   </div>
   <div class="form-group">
     <label for="email">Email</label>
+
     <input type="email" class="form-control" id="email" value="email" name="email" placeholder="....@live.se">
   </div>
 
@@ -103,14 +114,32 @@ use Carbon\Carbon;
   </div>
   <input type="submit" value="HYRA" class="btn btn-primary">
 </form>
+
     </div>
   </div>
 </form>
+ 
+
+
+
+    </div>
+  </div>
+</form>
+
+    </div>
+  </div>
+</form>
+
+
 
 </form>
     </div>
   </div>
 </div>
+
+
+@endsection
+
 
 <br>
 @if (Auth::check())
@@ -128,4 +157,9 @@ use Carbon\Carbon;
 </div>
 @endif
 @endif
+
+
 @endsection
+
+@endsection
+

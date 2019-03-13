@@ -3,6 +3,7 @@
 @section('content')
 <div class="container mt-3">
 
+
 	@php
 use App\Article;
 @endphp
@@ -25,7 +26,19 @@ $articles = Article::all();
 	<ol>
 		@foreach($articles as $article)
 		<li><a href="/articles/{{ $article->id }}">{{ $article->name }}</a></li>
+		@endforeach
+	</ol>
+	@endsection
+
+
+
 		<li><a href="/articles/{{$article->id }}">{{$article->name }}</a></li>
 		@endforeach
 	</ol>
 	@endsection
+
+		<li><a href="/articles/{{$article->id }}">{{$article->name }}</a></li>
+		@endforeach
+	</ol>
+	@endsection
+
