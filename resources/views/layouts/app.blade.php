@@ -34,11 +34,20 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/categories">Categories</a></li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/articles">Articles</a></li>
 
                     </ul>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
+                        @auth 
+                        <li class="nav-item">
+                            <a class="nav-link" href="/dashboard">Dashboard</a>
+                        </li>
+                        @endauth
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
@@ -48,9 +57,7 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('Sign Up') }}     <i class="fas fa-user-plus fa-1x"></i></a>
                                 </li>
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    Category <span class="caret"></span>
-                                </a>
+                                
                                 <div class="dropdown-menu dropdown-menu-right" style="margin-right:100px;" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="category/bil">Bil</a>
 
