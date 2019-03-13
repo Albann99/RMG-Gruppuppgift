@@ -14,9 +14,7 @@ class BookingController extends Controller
      */
     public function index()
     {
-        $bookings = Booking::all();
-
-        return view('/bookings', ['bookings' => $bookings]);
+       
     }
 
     /**
@@ -37,7 +35,7 @@ class BookingController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->all());
+        //dd($request->all());
 
         $booking = new Booking(); 
         $booking->article_id = $request->article_id;
@@ -45,10 +43,11 @@ class BookingController extends Controller
         $booking->lastname = $request->lastname;
         $booking->email = $request->email;
         $booking->phone = $request->phone;
-        $booking->date = $request->date;
+        $booking->date_start = $request->date_start;
+        $booking->date_end = $request->date_end;
         $booking->save();
 
-        return redirect('/bookings');
+        return redirect('/bookings/thankyou');
     }
 
     /**
@@ -59,7 +58,7 @@ class BookingController extends Controller
      */
     public function show(Booking $booking)
     {
-        //
+        return view('bookings/show', ['booking' => $booking]);
 
     }
 

@@ -17,7 +17,13 @@ class CreateArticleTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('url');
+<<<<<<< HEAD
             $table->string('user_id');
+=======
+            $table->string('rent_price');
+            $table->bigInteger('category_id')->unsigned();
+            $table->bigInteger('user_id')->unsigned();
+>>>>>>> 41b1e86937dcbadbd556f2cf1e62944b2fe2de35
             $table->timestamps();
         });
     }

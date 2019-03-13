@@ -18,6 +18,7 @@
 				<input type="text" name="url" id="url" class="form-control" placeholder="URL">
 			</div>
 
+<<<<<<< HEAD
 			<div class="dropdown">
   <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Kategorier
   <span class="caret"></span></button>
@@ -32,5 +33,29 @@
 		</form>
 
 		<a href="/articles">&laquo; Back to all projects</a>
+=======
+			<div class="form-group">
+				<label for="rent_price">Pris</label>
+				<input type="text" name="rent_price" id="rent_price" class="form-control" placeholder="Exempel: 300">
+			</div>
+
+			<div class="form-group">
+				<label for="category_id">Category id</label>
+				<input type="text" name="category_id" id="category_id" class="form-control" placeholder="Exempel: 1">
+			</div>
+
+
+			<div class="form-group">
+				<input type="hidden" name="user_id" id="user_id" class="form-control" placeholder="User_id">
+			</div>
+
+
+
+<br>
+			<input type="submit" value="Create New Article" class="btn btn-primary">
+		</form>
+
+		<a href="/articles">&laquo; Back to all articles</a>
+>>>>>>> 41b1e86937dcbadbd556f2cf1e62944b2fe2de35
 	</div>
 @endsection
