@@ -39,3 +39,5 @@ Route::post('/bookings', 'BookingController@store');
 Route::middleware(['auth'])->group(function() { 
 Route::get('/dashboard', 'DashboardController@index');
 });
+Route::get('/redirect', 'SocialAuthFacebookController@redirect');
+Route::get('/callback', 'SocialAuthFacebookController@callback');
