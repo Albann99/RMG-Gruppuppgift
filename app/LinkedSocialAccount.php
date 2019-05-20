@@ -2,6 +2,8 @@
 
 namespace App;
 
+use Article;
+use User;
 use Illuminate\Database\Eloquent\Model;
 
 class LinkedSocialAccount extends Model

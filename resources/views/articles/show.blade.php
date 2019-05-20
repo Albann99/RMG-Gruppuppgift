@@ -2,6 +2,9 @@
     @extends('layouts.app')
 
 @section('content')
+
+@include('partials/status')
+
 <form method="POST" action="/bookings">
   @csrf
   @method('POST')
@@ -16,6 +19,9 @@ use Carbon\Carbon;
       <h1 class="card-title" style="text-transform: uppercase;"><strong>PRIS: {{ $article->rent_price }} KR</strong></h1>
       <p>Created: <strong>{{ $article->created_at->diffForHumans() }}</strong></p>
       <h3>Ort: <strong>{{ $article->ort }}</strong></h3>
+
+      
+      @if(Auth::id() !== $article->user_id)
       <form>
         
       <div class="form-row">
@@ -59,7 +65,6 @@ use Carbon\Carbon;
     <div class="form-group">
       <label for="date_end">Date End</label>
       <select class="form-control" name="date_end">
-        <option>{{ Carbon::now()->addDay(0) }}</option>
         <option>{{ Carbon::now()->addDay(1) }}</option>
         <option>{{ Carbon::now()->addDay(2) }}</option>
         <option>{{ Carbon::now()->addDay(3) }}</option>
@@ -67,6 +72,7 @@ use Carbon\Carbon;
         <option>{{ Carbon::now()->addDay(5) }}</option>
         <option>{{ Carbon::now()->addDay(6) }}</option>
         <option>{{ Carbon::now()->addDay(7) }}</option>
+        <option>{{ Carbon::now()->addDay(8) }}</option>
       </select>
     </div>
    
@@ -76,12 +82,12 @@ use Carbon\Carbon;
   </div>
   <input type="submit" value="HYRA" class="btn btn-primary">
 </form>
+@endif
 <br>
-@if (Auth::check())
+@auth
 @if ($article->user_id == Auth::user()->id)
-
 <div>
-<a href="/articles/{{ $article->slug }}/edit" class="btn btn-warning" style="width:100%">Edit Project</a>
+<a href="/articles/{{ $article->slug }}/edit" class="btn btn-warning" style="width:100%">Edit Article</a>
 
 <form method="post" action="/articles/{{ $article->slug }}">
         @csrf
@@ -91,5 +97,5 @@ use Carbon\Carbon;
       </form>
 </div>
 @endif
-@endif
+@endauth
 @endsection

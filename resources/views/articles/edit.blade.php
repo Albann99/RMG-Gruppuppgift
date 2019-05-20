@@ -21,6 +21,11 @@
 			</div>
 
 			<div class="form-group">
+				<label for="ort">Ort</label>
+				<input type="text" name="ort" id="ort" class="form-control" placeholder="ORT" value="{{ $article->ort }}">
+			</div>
+
+			<div class="form-group">
 				<label for="rent_price">Article Price</label>
 				<input type="text" name="rent_price" id="rent_price" class="form-control" placeholder="Pris" value="{{ $article->rent_price }}">
 			</div>

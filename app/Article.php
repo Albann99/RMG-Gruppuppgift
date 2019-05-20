@@ -3,6 +3,7 @@
 namespace App;
 
 use Category;
+use Booking;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Model;
 
@@ -12,6 +13,12 @@ class Article extends Model
 	
     public function category() {
     	return $this->belongsTo(Category::class);
+    }
+    public function bookings() {
+        return $this->hasMany(Booking::class);
+    }
+    public function user() {
+        return $this->belongTo(User::class);
     }
 
     use Sluggable;

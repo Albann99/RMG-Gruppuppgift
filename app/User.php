@@ -2,12 +2,20 @@
 
 namespace App;
 
+use Article;
+use LinkedSocialAccount;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
+     public function article() {
+        return $this->hasMany(Article::class);
+    }
+    public function SocialAccount() {
+        return $this->hasMany(LinkedSocialAccount::class);
+    }
     use Notifiable;
 
     /**

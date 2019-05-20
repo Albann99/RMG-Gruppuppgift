@@ -24,7 +24,8 @@ class ArticleController extends Controller
 
     public function index()
     {
-        $articles = Article::all();
+        $articles = Article::orderBy('name')->get();
+        
         
         return view('articles/index', ['articles' => $articles]);
         
@@ -106,6 +107,7 @@ class ArticleController extends Controller
         $article->url = $request->url;
         $article->rent_price = $request->rent_price;
         $article->slug = str_slug($request->name);
+        $article->ort = $request->ort;
         $article->save();
 
         return redirect('/articles/' . $article->slug);

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Auth;
 use App\Booking;
+use Article;
 use Illuminate\Http\Request;
 
 class BookingController extends Controller
@@ -48,7 +49,7 @@ class BookingController extends Controller
         $booking->date_end = $request->date_end;
         $booking->save();
 
-        return redirect('/bookings/thankyou');
+        return redirect()->route('articles.index')->with('status', 'Thank yooooou!');
     }
 
     /**
