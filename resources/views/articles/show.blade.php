@@ -16,7 +16,7 @@ use Carbon\Carbon;
     <img src="{{ $article->url }}" class="card-img-top">
     <div class="card-body">
       <h1 class="card-title" style="text-transform: uppercase;"><strong> {{ $article->name }}</strong></h1>
-      <h1 class="card-title" style="text-transform: uppercase;"><strong>PRIS: {{ $article->rent_price }} KR</strong></h1>
+      <h1 class="card-title" style="text-transform: uppercase;"><strong>PRIS: {{ $article->rent_price }} kr/dag</strong></h1>
       <p>Created: <strong>{{ $article->created_at->diffForHumans() }}</strong></p>
       <h3>Ort: <strong>{{ $article->ort }}</strong></h3>
 
